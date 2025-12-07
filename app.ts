@@ -24,7 +24,7 @@ async function connectDB() {
 }
 connectDB();
 
-if (process.env.ENV === 'production') {
+if (process.env.ENV === 'PRODUCT') {
   app.use(morgan('combined'));
   app.use(helmet());
 } else {
