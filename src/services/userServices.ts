@@ -51,6 +51,14 @@ export const createUser = async () => {
 };
 
 /**
+ * 모든 User 검색
+ */
+export const getAllUsers = async () => {
+  const users = await User.find({});
+  return users;
+};
+
+/**
  * _id로 User를 검색
  * @param userID
  * @returns User Object | null
@@ -115,4 +123,4 @@ export const updateUserScore = async (userID: string, newScore: number) => {
   }
 };
 
-export default { createUser, getUser, getTop100, updateUserScore };
+export default { createUser, getUser, getTop100, updateUserScore, getAllUsers };

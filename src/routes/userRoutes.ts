@@ -1,6 +1,7 @@
 import {
   createUser,
   getUser,
+  getAllUsers,
   getTop100,
   updateUserTopScore,
 } from '@/controllers/userControllers';
@@ -14,6 +15,7 @@ const router = express.Router();
 router.post('/', createUser);
 
 // GET
+router.get('/', getAllUsers);
 router.get('/ranks', getTop100);
 // param - validation
 router.get('/:userID', param('userID').isMongoId(), validateRequest, getUser);

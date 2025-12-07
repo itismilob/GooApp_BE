@@ -14,6 +14,17 @@ export const createUser: Controller = async (req, res) => {
 
 /**
  * READ
+ * get all users
+ * @param req
+ * @param res
+ */
+export const getAllUsers: Controller = async (req, res) => {
+  const users = await userService.getAllUsers();
+  res.status(200).json(users);
+};
+
+/**
+ * READ
  * get User by _id
  */
 export const getUser: Controller = async (req, res) => {
